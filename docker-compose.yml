@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+   mysql:
+     image: mysql:latest
+     volumes:
+       - ./mysql:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: superdupersecurepassword
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: hopeful_employee
+       MYSQL_PASSWORD: supersecurepassword
+
+   wordpress:
+     depends_on:
+       - mysql
+     build:
+       context: ./
+       dockerfile: wordpress.dockerfile
+     volumes:
+      - ./html:/var/www/html
+     ports:
+       - "3000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: mysql:3306
+       WORDPRESS_DB_USER: hopeful_employee
+       WORDPRESS_DB_PASSWORD: supersecurepassword
