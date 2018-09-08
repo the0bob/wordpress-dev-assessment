@@ -33,3 +33,13 @@ https://docs.docker.com/compose/wordpress/
 
 And (as expected) had to tweak the Dockerfile to get emails to send...
 https://github.com/docker-library/wordpress/issues/30
+
+I decided to make the site URL an environment variable and pass it into wp-config.php.
+
+
+Wishlist (things I would need more time to implement):
+- modify site URL in database directly with an entrypoint script
+- enable serving over https
+- get docker to run in EC2 instance without having to 'sudo' every command
+- make docker service and running container persist on system reboot
+- have a script to save/retrieve database and images from s3 (or some other storage service), then .gitignore the database and images
