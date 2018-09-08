@@ -22,8 +22,11 @@ services:
       - ./html:/var/www/html
      ports:
        - ${SERVE_PORT}:80
+       - ${SERVE_PORT_SECURE}:443
      restart: always
      environment:
        WORDPRESS_DB_HOST: mysql:3306
        WORDPRESS_DB_USER: ${DB_USER}
        WORDPRESS_DB_PASSWORD: ${DB_PASS}
+       WORDPRESS_WP_HOME: ${BASE_URL}
+       WORDPRESS_WP_SITEURL: ${BASE_URL}

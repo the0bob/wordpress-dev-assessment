@@ -24,5 +24,8 @@ RUN \
  && echo 'exec docker-entrypoint.sh "$@"' >> /usr/local/bin/docker-entrypoint-wrapper.sh \
  && chmod +x /usr/local/bin/docker-entrypoint-wrapper.sh
 
+ENV WORDPRESS_WP_HOME=null
+ENV WORDPRESS_WP_SITEURL=null
+
 ENTRYPOINT ["docker-entrypoint-wrapper.sh"]
 CMD ["apache2-foreground"]

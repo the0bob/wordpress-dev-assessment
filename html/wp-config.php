@@ -37,8 +37,9 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define( 'WP_HOME', 'http://golocal.bobpalmer.info' );
-define( 'WP_SITEURL', 'http://golocal.bobpalmer.info' );
+define( 'WP_HOME', $_ENV['WORDPRESS_WP_HOME'] );
+
+define( 'WP_SITEURL', $_ENV['WORDPRESS_WP_SITEURL'] );
 
 /**#@+
  * Authentication Unique Keys and Salts.
