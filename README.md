@@ -41,5 +41,6 @@ Wishlist (things I would need more time to implement):
 - modify site URL in database directly with an entrypoint script
 - enable serving over https
 - get docker to run in EC2 instance without having to 'sudo' every command
-- make docker service and running container persist on system reboot
-- have a script to save/retrieve database and images from s3 (or some other storage service), then .gitignore the database and images
+- deploy script
+- backup database and images to s3
+- have a script to retrieve database and images from s3 (or some other storage service), then .gitignore the database and images (to use the backup data locally for testing purposes)
