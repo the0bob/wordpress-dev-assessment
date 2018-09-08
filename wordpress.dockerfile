@@ -1,4 +1,4 @@
-FROM wordpress:latest
+FROM wordpress:php7.1-apache
 
 # Because the Wordpress Docker image can't send mail by default...
 # https://github.com/docker-library/wordpress/issues/30

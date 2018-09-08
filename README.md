@@ -2,7 +2,7 @@ Full Stack Developer Assessment
 
 This is a Wordpress implementation with a contact form which posts to the Airtable API as well as sending an email notification.
 
-It is containerized for convenience.
+It is containerized for convenience. To get up and running, make a copy of ".env.example" named ".env" and modify the resulting file if desired.
 
 https://github.com/the0bob/wordpress-dev-assessment
 

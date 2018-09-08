@@ -2,15 +2,15 @@ version: '3'
 
 services:
    mysql:
-     image: mysql:latest
+     image: mysql:8
      volumes:
        - ./mysql:/var/lib/mysql
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: superdupersecurepassword
+       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
        MYSQL_DATABASE: wordpress
-       MYSQL_USER: hopeful_employee
-       MYSQL_PASSWORD: supersecurepassword
+       MYSQL_USER: ${DB_USER}
+       MYSQL_PASSWORD: ${DB_PASS}
 
    wordpress:
      depends_on:
@@ -21,9 +21,9 @@ services:
      volumes:
       - ./html:/var/www/html
      ports:
-       - "3000:80"
+       - ${SERVE_PORT}:80
      restart: always
      environment:
        WORDPRESS_DB_HOST: mysql:3306
-       WORDPRESS_DB_USER: hopeful_employee
-       WORDPRESS_DB_PASSWORD: supersecurepassword
+       WORDPRESS_DB_USER: ${DB_USER}
+       WORDPRESS_DB_PASSWORD: ${DB_PASS}
